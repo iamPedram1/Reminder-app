@@ -20,7 +20,6 @@ export const deleteTodo = async (id, clone, setTodoList) => {
     toast.success("Reminder Deleted");
   } catch (ex) {
     setTodoList(clone);
-    console.log("error", ex);
     toast.error("An Unexpected Error occured.");
   }
 };

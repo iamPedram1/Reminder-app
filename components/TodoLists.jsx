@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const TodoLists = ({ todos, onDelete }) => {
   return (
-    <ul className="list-group">
+    <ul className="list-group mb-5">
       {todos.map((todo) => (
         <React.Fragment key={todo.id}>
           <li className="list-group-item">

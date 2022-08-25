@@ -98,10 +98,11 @@ export default function Home({ todos }) {
         <TodoLists todos={paginated} onDelete={handleDelete} />
         <div className="d-flex justify-content-center align-items-center">
           <Pagination
+            hideOnSinglePage
             pageSize={pageSize}
             onChange={(page) => setPageNumber(page)}
             total={50}
-            style={{ marginTop: "2rem" }}
+            className="mb-5"
           />
         </div>
       </div>
