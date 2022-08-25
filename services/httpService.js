@@ -1,6 +1,6 @@
 import axios from "axios";
 import config from "../config.json";
-
+import { toast } from "react-toastify";
 const api = config.apiEndPoint;
 
 export const getTodos = async () => {
@@ -13,6 +13,14 @@ export const getInvidoualTodo = async (id) => {
   return data;
 };
 
-export const deleteTodo = async (id) => {
-  await axios.delete(`${api}/${id}`);
+export const deleteTodo = async (id, clone, setTodoList) => {
+  setTodoList(clone.filter((item) => item.id !== id));
+  try {
+    await axios.delete(`${api}/${id}`);
+    toast.success("Reminder Deleted");
+  } catch (ex) {
+    setTodoList(clone);
+    console.log("error", ex);
+    toast.error("An Unexpected Error occured.");
+  }
 };

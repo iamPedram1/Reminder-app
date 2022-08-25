@@ -9,7 +9,7 @@ const TodoLists = ({ todos, onDelete }) => {
           <li className="list-group-item">
             <div className="row">
               <div className="col">
-                <Link href={`/${todo.id}`}>
+                <Link href={`/${todo.id}`} bye="hi">
                   <span>{todo.title}</span>
                 </Link>
               </div>
